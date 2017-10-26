@@ -23,7 +23,8 @@ export default class Time extends React.Component {
     minTime: PropTypes.object,
     maxTime: PropTypes.object,
     excludeTimes: PropTypes.array,
-    monthRef: PropTypes.object
+    monthRef: PropTypes.object,
+    asInput: PropTypes.bool
   }
 
   static get defaultProps () {
@@ -93,13 +94,18 @@ export default class Time extends React.Component {
         <div className="react-datepicker__header react-datepicker__header--time">
           <div className="react-datepicker-time__header">Time</div>
         </div>
-        <div className="react-datepicker__time">
-          <div className="react-datepicker__time-box">
-            <ul className="react-datepicker__time-list" ref={list => { this.list = list }} style={height ? {height} : {}}>
-              {this.renderTimes.bind(this)()}
-            </ul>
+        {this.props.asInput && (
+          <input value="12:00" size="7" tabIndex="0" />
+        )}
+        {!this.props.asInput && (
+          <div className="react-datepicker__time">
+            <div className="react-datepicker__time-box">
+              <ul className="react-datepicker__time-list" ref={list => { this.list = list }} style={height ? {height} : {}}>
+                {this.renderTimes.bind(this)()}
+              </ul>
+            </div>
           </div>
-        </div>
+        )}
       </div>
     )
   }

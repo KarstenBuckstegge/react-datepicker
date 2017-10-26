@@ -57803,6 +57803,10 @@
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+	var _classnames = __webpack_require__(358);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
 	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
@@ -57836,6 +57840,7 @@
 	    key: 'render',
 	    value: function render() {
 	      var _props = this.props,
+	          className = _props.className,
 	          hidePopper = _props.hidePopper,
 	          popperComponent = _props.popperComponent,
 	          popperModifiers = _props.popperModifiers,
@@ -57846,10 +57851,11 @@
 	      var popper = void 0;
 
 	      if (!hidePopper) {
+	        var classes = (0, _classnames2.default)('react-datepicker-popper', className);
 	        popper = _react2.default.createElement(
 	          _reactPopper.Popper,
 	          {
-	            className: 'react-datepicker-popper',
+	            className: classes,
 	            modifiers: popperModifiers,
 	            placement: popperPlacement },
 	          popperComponent
@@ -57892,6 +57898,7 @@
 	}(_react2.default.Component);
 
 	PopperComponent.propTypes = {
+	  className: _propTypes2.default.string,
 	  hidePopper: _propTypes2.default.bool,
 	  popperComponent: _propTypes2.default.element,
 	  popperModifiers: _propTypes2.default.object, // <datepicker/> props
@@ -62587,7 +62594,7 @@
 	          _react2.default.createElement(
 	            'code',
 	            { className: 'jsx' },
-	            '\n<DatePicker\n    selected={this.state.startDate}\n    onChange={this.handleChange}\n    popperPlacement="top-end"\n    popperModifiers={{\n      offset: {\n        enabled: true,\n        offset: \'5px, 10px\'\n      },\n      preventOverflow: {\n        enabled: true,\n        escapeWithReference: false, // force popper to stay in viewport (even when input is scrolled out of view)\n        boundariesElement: \'viewport\'\n      }\n    }}\n/>\n'
+	            '\n<DatePicker\n    selected={this.state.startDate}\n    onChange={this.handleChange}\n    popperClassName="some-custom-class"\n    popperPlacement="top-end"\n    popperModifiers={{\n      offset: {\n        enabled: true,\n        offset: \'5px, 10px\'\n      },\n      preventOverflow: {\n        enabled: true,\n        escapeWithReference: false, // force popper to stay in viewport (even when input is scrolled out of view)\n        boundariesElement: \'viewport\'\n      }\n    }}\n/>\n'
 	          )
 	        ),
 	        _react2.default.createElement(
@@ -62596,6 +62603,7 @@
 	          _react2.default.createElement(_reactDatepicker2.default, {
 	            selected: this.state.startDate,
 	            onChange: this.handleChange,
+	            popperClassName: 'some-custom-class',
 	            popperPlacement: 'top-end',
 	            popperModifiers: {
 	              offset: {

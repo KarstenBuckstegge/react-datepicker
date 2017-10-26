@@ -39,6 +39,14 @@ export default class ShowTime extends React.Component {
             timeFormat="HH:mm"
             timeIntervals={15}
             dateFormat="LLL" />
+        <DatePicker
+            selected={this.state.startDate}
+            onChange={this.handleChange}
+            showTimeSelect
+            timeAsInput
+            timeFormat="HH:mm"
+            timeIntervals={15}
+            dateFormat="LLL" />
       </div>
     </div>
   }

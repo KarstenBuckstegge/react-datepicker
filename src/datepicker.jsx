@@ -116,6 +116,7 @@ export default class DatePicker extends React.Component {
     showTimeSelect: PropTypes.bool,
     timeFormat: PropTypes.string,
     timeIntervals: PropTypes.number,
+    timeAsInput: PropTypes.bool,
     minTime: PropTypes.object,
     maxTime: PropTypes.object,
     excludeTimes: PropTypes.array
@@ -446,6 +447,7 @@ export default class DatePicker extends React.Component {
         onTimeChange={this.handleTimeChange}
         timeFormat={this.props.timeFormat}
         timeIntervals={this.props.timeIntervals}
+        timeAsInput={this.props.timeAsInput}
         minTime={this.props.minTime}
         maxTime={this.props.maxTime}
         excludeTimes={this.props.excludeTimes}

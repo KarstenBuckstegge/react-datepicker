@@ -93,7 +93,8 @@ export default class Calendar extends React.Component {
     withPortal: PropTypes.bool,
     utcOffset: PropTypes.number,
     weekLabel: PropTypes.string,
-    yearDropdownItemNumber: PropTypes.number
+    yearDropdownItemNumber: PropTypes.number,
+    timeAsInput: PropTypes.bool
   }
 
   static get defaultProps () {
@@ -376,7 +377,8 @@ export default class Calendar extends React.Component {
             showMonthDropdown={this.props.showMonthDropdown}
             showYearDropdown={this.props.showYearDropdown}
             withPortal={this.props.withPortal}
-            monthRef={this.state.monthContainer} />
+            monthRef={this.state.monthContainer}
+            asInput={this.props.timeAsInput} />
       )
     } else {
       return
